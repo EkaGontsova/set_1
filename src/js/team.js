@@ -12,7 +12,11 @@ export class Team {
 
     addAll(...characters) {
         characters.forEach(character => {
-            this.members.add(character); 
+            try {
+                this.add(character); 
+            } catch (error) {
+                console.error(error.message);
+            }
         });
     }
 
